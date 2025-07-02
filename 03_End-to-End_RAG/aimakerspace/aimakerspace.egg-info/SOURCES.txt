@@ -1,0 +1,11 @@
+README.md
+pyproject.toml
+aimakerspace/aimakerspace.egg-info/PKG-INFO
+aimakerspace/aimakerspace.egg-info/SOURCES.txt
+aimakerspace/aimakerspace.egg-info/dependency_links.txt
+aimakerspace/aimakerspace.egg-info/requires.txt
+aimakerspace/aimakerspace.egg-info/top_level.txt
+aimakerspace/openai_utils/__init__.py
+aimakerspace/openai_utils/chatmodel.py
+aimakerspace/openai_utils/embedding.py
+aimakerspace/openai_utils/prompts.py
