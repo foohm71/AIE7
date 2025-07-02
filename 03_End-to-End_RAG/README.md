@@ -85,3 +85,92 @@ Follow these steps to prepare and submit your homework:
 3. Create a _**5 minute or less**_ Loom video about the assignment and your modified challenge application
 4. Post on social media (LinkedIn, X, and [Discord's #build-ship-share-🏗️-🚢-🚀 channel](https://discord.com/channels/1135695983720792216/1135700320517890131))
 5. Complete the Homework Form!
+
+# aimakerspace
+
+Utilities for RAG and OpenAI workflows.
+
+## Installation (Local Development)
+
+1. **Navigate to the project directory:**
+   ```sh
+   cd 03_End-to-End_RAG
+   ```
+
+2. **(Optional) Create and activate a virtual environment:**
+   ```sh
+   python3 -m venv .venv
+   source .venv/bin/activate
+   ```
+
+3. **Install the package locally:**
+   ```sh
+   pip install .
+   ```
+
+This will install the `aimakerspace` package and its dependencies (e.g., `PyPDF2`).
+
+---
+
+## Using aimakerspace in Another Code Base
+
+You can use `pip` to install this package into any other Python project on your machine.
+
+### Option 1: Install Directly from Local Path
+
+1. In your other project's environment, run:
+   ```sh
+   pip install /absolute/path/to/AIMakerSpace/AIE7/03_End-to-End_RAG
+   ```
+   Or, if you are in the same parent directory:
+   ```sh
+   pip install ../03_End-to-End_RAG
+   ```
+
+### Option 2: Install from a Built Wheel
+
+1. Build a wheel in the library directory:
+   ```sh
+   pip install build
+   python -m build
+   ```
+2. This will create a `.whl` file in the `dist/` directory.
+3. In your other project, install the wheel:
+   ```sh
+   pip install /path/to/aimakerspace-0.1.0-py3-none-any.whl
+   ```
+
+After installation, you can import and use the package in your code:
+```python
+from aimakerspace.text_utils import TextFileLoader
+```
+
+---
+
+## Usage Example
+
+After installation, you can import and use the package in your Python scripts or notebooks:
+
+```python
+from aimakerspace.text_utils import TextFileLoader, CharacterTextSplitter, PDFLoader
+
+# Example usage:
+loader = TextFileLoader("data/KingLear.txt")
+loader.load()
+splitter = CharacterTextSplitter()
+chunks = splitter.split_texts(loader.documents)
+print(len(chunks))
+```
+
+## Project Structure
+
+- `aimakerspace/` - Main package code
+- `pyproject.toml` - Build and dependency configuration
+- `README.md` - This file
+
+## Notes
+- Requires Python 3.8 or higher.
+- For development, you can edit the code in `aimakerspace/` and reinstall with `pip install .` to update changes.
+
+## License
+Add your license information here.
